@@ -1,6 +1,7 @@
 FROM ich777/debian-baseimage
 
-LABEL maintainer="admin@minenet.at"
+LABEL org.opencontainers.image.authors="admin@minenet.at"
+LABEL org.opencontainers.image.source="https://github.com/ich777/docker-pushover-on-start"
 
 ENV PUSHOVER_APP_TOKEN=""
 ENV PUSHOVER_USER_TOKEN=""
