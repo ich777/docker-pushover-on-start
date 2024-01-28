@@ -1,7 +1,8 @@
 # Basic Pushover notification when the Container is started in Docker optimized for Unraid
 
-This is a simple container that sends a message when the container is started (needed this for a headless machine to know when I can connect or better speaking start up the VM's with WOL).
-
+This is a simple container that sends a message when the container is started (needed this for a headless machine to know when I can connect or better speaking start up the VM's with WOL).  
+  
+If using the string `HOST_IP` in the message text the container will try to replace this string with the Host IP address - this will only work when the container is ran on the host network!
 
 ## Env params
 | Name | Value | Example |
@@ -20,6 +21,7 @@ docker run --name PushoverOnStart -d \
     --env 'PUSHOVER_TITLE=Startup Complete' \
     --env 'PUSHOVER_MESSAGE=Server is now Online!' \
     --env 'PUSHOVER_PRIORITY=0' \
+    --net='host' \
     ich777/pushover-on-start
 ```
 
